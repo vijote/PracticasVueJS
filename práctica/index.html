@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://unpkg.com/vue"></script>
+
+    <title>Finalistas</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/4-col-portfolio.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Ganadores del mundial Rusia 2018</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading -->
+      <h1 class="my-4">Ganadores
+        <small>Rusia 2018</small>
+      </h1>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="app">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" v-bind:src="imagenPerfil" alt="Card image"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{nombre}}</a>
+              </h4>
+              <p class="card-text">{{descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="app2">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" v-bind:src="imagenPerfil" alt="Card image"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{nombre}}</a>
+              </h4>
+              <p class="card-text">{{descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="app3">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" v-bind:src="imagenPerfil" alt="Card image"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{nombre}}</a>
+              </h4>
+              <p class="card-text">{{descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="app4">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" v-bind:src="imagenPerfil" alt="Card image"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{nombre}}</a>
+              </h4>
+              <p class="card-text">{{descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="app5">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" v-bind:src="imagenPerfil" alt="Card image"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{nombre}}</a>
+              </h4>
+              <p class="card-text">{{descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="app6">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" v-bind:src="imagenPerfil" alt="Card image"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{nombre}}</a>
+              </h4>
+              <p class="card-text">{{descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="app7">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" v-bind:src="imagenPerfil" alt="Card image"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{nombre}}</a>
+              </h4>
+              <p class="card-text">{{descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="app8">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" v-bind:src="imagenPerfil" alt="Card image"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{nombre}}</a>
+              </h4>
+              <p class="card-text">{{descripcion}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="video" align="center">
+  <video width="450" controls :src="video"></video>
+  <div>
+    <button @click="changeVideo">Change</button>
+  </div>
+</div>
+      <!-- /.row -->
+
+      
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+
+      <!-- Esta porcion codigo va a correr la funcion autorun al momento en que termina de cargar la pagina-->
+    <script type="text/javascript">
+   function autorun()
+   {
+      new Vue({
+      el: '#app', 
+      data: { 
+        nombre: 'Crash Nebula',
+        descripcion : 'ola soy crash nebula',
+        imagenPerfil: "imagenes/img1.jpg",
+      }
+    })
+
+      new Vue({
+      el: '#app2', 
+      data: { 
+        nombre: 'Barbilla roja',
+        imagenPerfil: "imagenes/img3.jpg",
+        descripcion: 'soy barbilla roja y soy pansexual',
+      }
+    })
+
+      new Vue({
+      el: '#app3', 
+      data: { 
+        nombre: 'Mauricio macri',
+        imagenPerfil: "imagenes/img4.jpg",
+        descripcion: 'soy mauricio macri y prometo bajar el dolar',
+      }
+    })
+
+      new Vue({
+      el: '#app4', 
+      data: { 
+        nombre: 'iDubbbz',
+        imagenPerfil: "imagenes/gay.gif",
+        descripcion: 'im gay',
+      }
+    })
+
+      new Vue({
+      el: '#app5', 
+      data: { 
+        nombre: 'aramat',
+        imagenPerfil: "imagenes/img5.jpg",
+        descripcion: 'ja ja ',
+      }
+    })
+
+      new Vue({
+      el: '#app6', 
+      data: { 
+        nombre: 'maravilla martinez',
+        imagenPerfil: "imagenes/img6.jpg",
+        descripcion: 'vamos manaos ',
+      }
+    })
+
+      new Vue({
+      el: '#app7', 
+      data: { 
+        nombre: 'bad boni beibi',
+        imagenPerfil: "imagenes/img7.jpg",
+        descripcion: 'chambea, jala',
+      }
+    })
+
+      new Vue({
+      el: '#app8', 
+      data: { 
+        nombre: 'ozuna beibi',
+        imagenPerfil: "imagenes/img8.jpg",
+        descripcion: 'despacito',
+      }
+    })
+
+      new Vue({
+  el:"#video",
+  data:{
+    video: "video/video_musica.mp4"
+  },
+  methods:{
+    changeVideo(){
+      this.video = "https://redirector.googlevideo.com/videoplayback?lmt=1529074882180689&dur=194.443&ratebypass=yes&gir=yes&clen=14726276&mn=sn-ab5szn7l%2Csn-p5qlsnd6&fvip=3&fexp=23709359&requiressl=yes&sparams=clen%2Cdur%2Cei%2Cgir%2Cid%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cexpire&source=youtube&mt=1529907775&mv=m&ms=au%2Conr&pl=23&id=o-AAdsTDv5hV4gAGlTQasiaXOHBxcKL8K5jXXvGRsDmQrY&ipbits=0&ip=45.77.153.60&mm=31%2C26&itag=18&initcwndbps=662500&expire=1529929467&c=WEB&ei=m4owW6TzCsuq8wTT9pbgDw&mime=video%2Fmp4&key=yt6&signature=D82C29C01C623EF66F0FF0FEF1E1051DD089DA1F.3A6756618D9910CF1449E6C654C40BB6240A6C7F&title=Bebe+Rexha+-+I%27m+A+Mess+%28Official+Lyric+Video%29&title=Bebe+Rexha+-+I%27m+A+Mess+%28Official+Lyric+Video%29"
+
+      this.video = "https://redirector.googlevideo.com/videoplayback?ei=9oowW77hGISZ8wSk0a9Q&c=WEB&lmt=1526012556636279&expire=1529929558&ip=45.77.202.100&itag=18&mn=sn-ab5l6nzl%2Csn-ab5sznlk&mm=31%2C29&ipbits=0&ms=au%2Crdu&mime=video%2Fmp4&mv=m&source=youtube&pl=23&initcwndbps=662500&id=o-AJtTe7gyHhRC2nyNVggWwpLCGmMR4jRUdSIIhOcnIGs0&dur=197.160&fvip=4&fexp=23709359&mt=1529907829&ratebypass=yes&gir=yes&sparams=clen%2Cdur%2Cei%2Cgir%2Cid%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cexpire&requiressl=yes&key=yt6&clen=4891332&signature=4B71B402F071661B78C7CA43A82056319970037B.8FDB0BD0FF66B2157EB0F751F611171E830EB6C0&title=Charlie+Puth+-+LA+Girls+%5BOfficial+Audio%5D&title=Charlie+Puth+-+LA+Girls+%5BOfficial+Audio%5D"
+    }
+  }
+})
+   }
+   if (window.addEventListener) window.addEventListener("load", autorun, false);
+   else if (window.attachEvent) window.attachEvent("onload", autorun);
+   else window.onload = autorun;
+  </script>
+
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
