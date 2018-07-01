@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://unpkg.com/vue"></script>
+
+    <title>Vamos Francia</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/4-col-portfolio.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Elecciones Presidenciales 2019</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading -->
+      <h1 class="my-4">Candidatos
+      </h1>
+
+      <div id="arreglo">
+
+        <ul id="menu">
+        <li v-for="item in items">
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" :src="item.image" alt="Card image"></a>
+              <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{item.title}}</a>
+              </h4>
+              <p class="card-text">{{item.content}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </li>
+        </ul>
+
+      </div>
+
+      <div id="video" align="center">
+        <video width="450" controls :src="video"></video>
+        <div>
+          <button @click="changeVideo">Change</button>
+        </div>
+      </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+
+      <!-- Esta porcion codigo va a correr la funcion autorun al momento en que termina de cargar la pagina-->
+    <script type="text/javascript">
+   function autorun()
+   {
+      new Vue({
+                el: '#arreglo',
+                data: {
+                    items : [
+                        {id: 1,
+                        title: 'Martin Garrix',
+                        content: 'nº1 DJ del mundo',
+                        image: 'imagenes/pez.gif'},
+                        {id: 2,
+                        title: 'Susana Horia',
+                        content: 'Comediante Profesional',
+                        image: 'imagenes/badboni.gif'},
+                        {id: 3,
+                        title: 'Barbilla roja',
+                        content: 'Enemigo de Superman',
+                        image: 'imagenes/img3.jpg'},
+                        {id: 4,
+                        title: 'Mauricio Macri',
+                        content: 'Inteligente empresario',
+                        image: 'imagenes/img4.jpg'},
+                        {id: 5,
+                        title: 'aramat',
+                        content: 'ja ja',
+                        image: 'imagenes/img5.jpg'}
+                        ]
+                    }
+            });
+
+      new Vue({
+  el:"#video",
+  data:{
+    video: "video/video_musica.mp4"
+  },
+  methods:{
+    changeVideo(){
+      this.video = "video/video_musica_2.mp4"
+    }
+  }
+})
+   }
+   if (window.addEventListener) window.addEventListener("load", autorun, false);
+   else if (window.attachEvent) window.attachEvent("onload", autorun);
+   else window.onload = autorun;
+  </script>
+
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
