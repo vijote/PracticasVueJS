@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+  
+    <script src="https://unpkg.com/vue"></script>
+
+    <title>v-if practica</title>
+
+  </head>
+
+  <body>
+
+<div id="vif">
+  <!--con $data verifico que esté funcionando correctamente-->
+  {{$data}}
+  <!--realizo tres preguntas iniciales-->
+  <p>¿como se siente en este momento?</p>
+<form>
+  <input type="radio" v-model="vue.emo" name="emotion" value="triste">Triste<br>
+  <input type="radio" v-model="vue.emo" name="emotion" value="feliz">Feliz<br>
+  <input type="radio" v-model="vue.emo" name="emotion" value="otro">Otro<br>
+</form>
+<!--y aquí comienzo a preguntar a las respuestas anteriores-->
+<div v-if="vue.emo == 'feliz' ">
+  <p>¿Cuantas veces se siente asi?</p>
+<form>
+  <input type="radio" v-model="vue.cant" name="quantity" value="1"> 1 a 10 veces al día<br>
+  <input type="radio" v-model="vue.cant" name="quantity" value="2"> 10 a 20 veces al día<br>
+  <input type="radio" v-model="vue.cant" name="quantity" value="3"> más de 20 veces al día<br>
+</form>
+</div>
+
+<div v-else-if="vue.emo =='otro' ">
+  <p>¿Como se siente?</p>
+<form>
+  <input type="radio" v-model="vue.emo2" name="emotion 2" value="1"> Depresion<br>
+  <input type="radio" v-model="vue.emo2" name="emotion 2" value="2"> Angustia<br>
+  <input type="radio" v-model="vue.emo2" name="emotion 2" value="3"> Enojo<br>
+</form>
+</div>
+
+<div v-else-if="vue.emo =='triste' ">
+  <p>¿Por qué se siente así?</p>
+<form>
+  <input type="radio" v-model="vue.sad" name="sad" value="1"> Porque perdí algo preciado<br>
+  <input type="radio" v-model="vue.sad" name="sad" value="2"> Porque no logro lo que quiero<br>
+  <input type="radio" v-model="vue.sad" name="sad" value="3"> No se soy re bipolar ahke<br>
+</form>
+</div>
+
+<div v-if="(vue.emo =='feliz' && vue.cant =='1')">
+  <p>Intente cantar su canción favorita y será aún más feliz</p>
+</div>
+<div v-if="(vue.emo =='feliz' && vue.cant =='2')">
+  <p>Intente escuchar un chiste y será mas feliz aún</p>
+</div>
+<div v-if="(vue.emo =='feliz' && vue.cant =='3')">
+  <p>¡Usted es una persona muy feliz!</p>
+</div>
+
+<div v-if="(vue.emo =='triste' && vue.sad =='1')">
+  <p>Puta que sad</p>
+</div>
+<div v-if="(vue.emo =='triste' && vue.sad =='2')">
+  <p>No tenga miedo, pronto lo logrará</p>
+</div>
+<div v-if="(vue.emo =='triste' && vue.sad =='3')">
+  <p>:)</p>
+</div>
+
+<div v-if="(vue.emo =='otro' && vue.emo2 =='1')">
+  <p>Relájese y acuda a un profesional</p>
+</div>
+<div v-if="(vue.emo =='otro' && vue.emo2 =='2')">
+  <p>Intente relajarse, analice sus motivos. En caso contrario acuda a un profesional</p>
+</div>
+<div v-if="(vue.emo =='otro' && vue.emo2 =='3')">
+  <p>Respire profundo, dé un paseo y tome agua</p>
+</div>
+
+</div>
+
+      <!-- Esta porcion codigo va a correr la funcion autorun al momento en que termina de cargar la pagina-->
+    <script type="text/javascript">
+   function autorun()
+   {
+      new Vue({
+                el: '#vif',
+                data: {
+                    vue: {
+                      emo: null,
+                      cant: 0,
+                      sad: 0,
+                      emo2: 0,
+                      descripcion: ''
+                      }
+
+                    }
+            });
+
+   }
+   if (window.addEventListener) window.addEventListener("load", autorun, false);
+   else if (window.attachEvent) window.attachEvent("onload", autorun);
+   else window.onload = autorun;
+  </script>
+
+  </body>
+
+</html>
